@@ -6,6 +6,7 @@ $(document).ready(function() {
       $.ajax({
           url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',    //Your api url
           type: 'PUT',   //type is any HTTP method
+          Access-Control-Allow-Origin: 'HTTP:akashxg.github.io:80',
           data: {
               data: sendData
           },      //Data as js object
