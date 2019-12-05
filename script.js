@@ -4,7 +4,7 @@ $(document).ready(function() {
       //var sendData = $('#EC2_TEST').val();
       var sendData = "hello Sam";
        $.ajax({
-          type: 'PUT',
+          type: 'POST',
           url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',
           data: sendData,
           contentType: "application/json",
