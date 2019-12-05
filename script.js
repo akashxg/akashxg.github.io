@@ -3,14 +3,14 @@ $(document).ready(function() {
       console.log("made it inside EC2");
       //var sendData = $('#EC2_TEST').val();
       var sendData = "hello Sam";
-      $.ajax({
-          url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',    //Your api url
-          type: 'PUT',   //type is any HTTP method
-          Access-Control-Allow-Origin: 'HTTP:akashxg.github.io:80',
-          data: {
-              data: sendData
-          },      //Data as js object
-          success: function () {
+       $.ajax({
+          type: 'PUT',
+          url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',
+          data: sendData,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (data, status){
+            alert("Data: "+ data + "\nStatus: "+ status);
           }
       });
 
