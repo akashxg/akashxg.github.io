@@ -82,6 +82,24 @@ html, body {
   margin: 0 0 15px;
 }
 
+/* WindowBox style */
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
 </style>
 
 <link rel="stylesheet" type="text/css" href="https://d2q66yyjeovezo.cloudfront.net/css/menu-2kjdfskljflksdfjk/globalnav-5ecef5f54d5392337572b1a51cd596f7645af8d2.gz.css" charset="utf-8">
@@ -11854,4 +11872,13 @@ var ByRei_dynDiv = {
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 
-<div class="MPWcart" style="display: none;"><textarea name="MPWcart"></textarea><span class="MPWcartDragDrop">Drag/drop or double click<br>graphs here for merging.</span><span class="MPWcartNumItems"></span><span class="MPWcartBigIcon"></span><div class="MPWcartMessage"></div><div class="MPWcartButton" style="display: none;"><input type="submit" class="MPWbutton primary checkoutButton" value="Merge graphs" title="Merge all graphs in cart and open in new window." disabled="" style="opacity: 0.5; cursor: not-allowed;"><input type="submit" class="MPWbutton addGraphButton" value="Add all graphs" title="Add all iGraphs from this page to the cart."><input type="submit" class="MPWbutton manageCartButton" value="Manage cart" title="Click to manage iGraphs present in cart." disabled="" style="opacity: 0.5; cursor: not-allowed;"><input type="submit" class="MPWbutton emptyCartButton" value="Empty cart" title="Remove all iGraphs from cart." disabled="" style="opacity: 0.5; cursor: not-allowed;"><input type="submit" class="MPWbutton primary iGraphSnapshotButton" value="Bulk Snapshot" title="Take snapshot of all graphs. (Use Ctrl/Cmd-click for Snapshot with data)" disabled="" style="opacity: 0.5; cursor: not-allowed;"></div><a class="MPWcartCancel" href="#"></a><div class="MPWmanageCartBox" style="display: none;"><span class="MPWmanageCartCloseIcon"></span><div class="MPWmanageCartGraphContainer"></div></div></div><span id="csem-nav-css-indicator" style="display: none;"></span><span id="csem-app-css-indicator" style="display: none;"></span></body></html>
+<div class="MPWcart" style="display: none;"><textarea name="MPWcart"></textarea><span class="MPWcartDragDrop">Drag/drop or double click<br>graphs here for merging.</span><span class="MPWcartNumItems"></span><span class="MPWcartBigIcon"></span><div class="MPWcartMessage"></div><div class="MPWcartButton" style="display: none;"><input type="submit" class="MPWbutton primary checkoutButton" value="Merge graphs" title="Merge all graphs in cart and open in new window." disabled="" style="opacity: 0.5; cursor: not-allowed;"><input type="submit" class="MPWbutton addGraphButton" value="Add all graphs" title="Add all iGraphs from this page to the cart."><input type="submit" class="MPWbutton manageCartButton" value="Manage cart" title="Click to manage iGraphs present in cart." disabled="" style="opacity: 0.5; cursor: not-allowed;"><input type="submit" class="MPWbutton emptyCartButton" value="Empty cart" title="Remove all iGraphs from cart." disabled="" style="opacity: 0.5; cursor: not-allowed;"><input type="submit" class="MPWbutton primary iGraphSnapshotButton" value="Bulk Snapshot" title="Take snapshot of all graphs. (Use Ctrl/Cmd-click for Snapshot with data)" disabled="" style="opacity: 0.5; cursor: not-allowed;"></div><a class="MPWcartCancel" href="#"></a><div class="MPWmanageCartBox" style="display: none;"><span class="MPWmanageCartCloseIcon"></span><div class="MPWmanageCartGraphContainer"></div></div></div><span id="csem-nav-css-indicator" style="display: none;"></span><span id="csem-app-css-indicator" style="display: none;"></span>
+  <!-- WINDOWBOX HTML-->
+  <div id="mydiv">
+    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+    <div id="mydivheader">Click here to move</div>
+    <p>Sample</p>
+    <p>Commands</p>
+    <p>In Here</p>
+  </div>
+</body></html>
