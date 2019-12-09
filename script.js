@@ -45,7 +45,6 @@ $(document).ready(function() {
   }
 
   $("#EC2_TEST").click(function() {
-    console.log("made it inside EC2");
     //var sendData = $('#EC2_TEST').val();
     var sendData = { language: "c++" };    
     $.ajax({
