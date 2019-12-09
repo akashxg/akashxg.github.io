@@ -46,10 +46,10 @@ $(document).ready(function() {
 
   $("#EC2_TEST").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var sendData = { operation: "create", table_name: "Capstone", payload: { key: "Sam", value: "is sexy", project: "2"} };
+      var sendData = {operation: "create", table_name: "Capstone", payload: {key: "language", value: "python"}};
       $.ajax({
           type: 'POST',
-          url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',
+          url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
           data: JSON.stringify(sendData),
           crossDomain: true,
           contentType: "application/json",
