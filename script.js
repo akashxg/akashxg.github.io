@@ -56,13 +56,12 @@ $(document).ready(function() {
           dataType: "json",
           success: function (data, status){
             alert("Data: "+ data["body"] + "\nStatus: "+ status);
+            getElementById('#windowboxCode').innerHTML = data["body"];
             console.log("it works");
           }
       });
 
     });
-
-
 
     // $("#EC2_TEST").click(function() {
     //   console.log("made it inside EC2");
