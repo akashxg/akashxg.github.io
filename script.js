@@ -55,7 +55,7 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            alert("Data: "+ data["body"] + "\nStatus: "+ status);
+            alert("Data: "+ data.results[0] + "\nStatus: "+ status);
           }
       });
 
