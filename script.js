@@ -55,6 +55,8 @@ $(document).ready(function() {
         contentType: "application/json",
         dataType: "json",
         success: function(data){
+          console.log("made it inside xD");
+          console.log(data);
           document.getElementById("windowboxCode").innerHTML=(data.result["body"]);
         }
     });
