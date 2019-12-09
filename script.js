@@ -47,7 +47,7 @@ $(document).ready(function() {
   $("#EC2_TEST").click(function() {
     console.log("made it inside EC2");
     //var sendData = $('#EC2_TEST').val();
-    var sendData = { operation: "create", table_name: "codes", payload: { "language": "c++" } };    
+    var sendData = { language: "c++" };    
     $.ajax({
         type: 'POST',
         url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1ch',
