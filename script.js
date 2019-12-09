@@ -56,8 +56,7 @@ $(document).ready(function() {
           dataType: "json",
           success: function (data, status){
             alert("Data: "+ data["body"] + "\nStatus: "+ status);
-            var elem = document.getElementById('#windowboxCode').innerHTML;
-            elem = "akash";
+            document.getElementById('windowboxCode').innerHTML = data["body"];
             console.log("it works");
           }
       });
