@@ -46,7 +46,7 @@ $(document).ready(function() {
 
   $("#EC2_TEST").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var sendData = {operation: "create", table_name: "Capstone", payload: {key: "language", value: "python"}};
+      var sendData = {operation: "create", table_name: "Capstone", payload: {language: "python"}};
       $.ajax({
           type: 'POST',
           url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
