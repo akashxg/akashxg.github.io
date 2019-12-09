@@ -62,6 +62,7 @@ $(document).ready(function() {
         },
         error: function(xhr, ajaxOptions, thrownError) {
           console.log("ah shit, here we go again...");
+          console.log(thrownError);
         }
     });
 
