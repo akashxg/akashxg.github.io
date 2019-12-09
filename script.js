@@ -59,6 +59,9 @@ $(document).ready(function() {
           console.log("made it inside xD");
           console.log(data);
           document.getElementById("windowboxCode").innerHTML=(data.result["body"]);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log("ah shit, here we go again...");
         }
     });
 
