@@ -46,7 +46,7 @@ $(document).ready(function() {
 
   $("#EC2_TEST").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var sendData = { operation: "create", table_name: "Capstone", payload: { key: "Sam", value: "is sexy" } };
+      var sendData = { operation: "create", table_name: "Capstone", payload: { key: "Sam", value: "is sexy", project: "2"} };
       $.ajax({
           type: 'POST',
           url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',
@@ -55,7 +55,7 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            alert("Data: "+ data.results["body"] + "\nStatus: "+ status);
+            alert("Data: "+ data["body"] + "\nStatus: "+ status);
           }
       });
 
