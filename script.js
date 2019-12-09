@@ -49,7 +49,7 @@ $(document).ready(function() {
     //var sendData = $('#EC2_TEST').val();
     var sendData = {operation: "create",table_name: "codes", payload: {key: "language", value:"c++"}};    $.ajax({
         type: 'GET',
-        url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',
+        url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
         data: JSON.stringify(sendData),
         crossDomain: true,
         contentType: "application/json",
