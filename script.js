@@ -45,28 +45,21 @@ $(document).ready(function() {
   }
 
   $("#EC2_TEST").click(function() {
-    //var sendData = $('#EC2_TEST').val();
-    var sendData = { language: "c++" };    
-    $.ajax({
-        type: 'POST',
-        url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1ch',
-        data: JSON.stringify(sendData),
-        crossDomain: true,
-        contentType: "application/json",
-        dataType: "json",
-        success: function(data){
-          alert("Data: "+ data + "\nStatus: "+ status);
-          console.log("made it inside xD");
-          console.log(data);
-          document.getElementById("windowboxCode").innerHTML=(data.result["body"]);
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-          console.log("ah shit, here we go again...");
-          console.log(thrownError);
-        }
-    });
+      //var sendData = $('#EC2_TEST').val();
+      var sendData = { operation: "create", table_name: "Capstone", payload: { key: "Sam", value: "is sexy" } };
+      $.ajax({
+          type: 'POST',
+          url: 'https://n0coguumod.execute-api.us-east-1.amazonaws.com/test_1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (data, status){
+            alert("Data: "+ data + "\nStatus: "+ status);
+          }
+      });
 
-  });
+    });
 
 
 
