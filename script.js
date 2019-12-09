@@ -56,6 +56,7 @@ $(document).ready(function() {
           dataType: "json",
           success: function (data, status){
             alert("Data: "+ data["body"] + "\nStatus: "+ status);
+            console.log("it works");
           }
       });
 
