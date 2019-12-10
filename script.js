@@ -77,7 +77,7 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            message = data["body"].replace("ami_id", "ami-00068cd7555f543d5")
+            message = data["body"].replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
             document.getElementById('windowboxCode').innerHTML = message;
             console.log("it works");
           }
@@ -85,6 +85,52 @@ $(document).ready(function() {
 
     });
     
+    $("#gang_type").click(function() {
+      //var sendData = $('#EC2_TEST').val();
+      var language = document.getElementById("selection")
+      var option = language.options[language.selectedIndex]
+      var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
+      $.ajax({
+          type: 'POST',
+          url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (data, status){
+            message = data["body"].replace("instance_type", "<strong>t2.micro</strong>")
+            message2 = message.replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
+            document.getElementById('windowboxCode').innerHTML = message2;
+            console.log("it works");
+          }
+      });
+
+    });
+    
+    $("#gang_count").click(function() {
+      //var sendData = $('#EC2_TEST').val();
+      var language = document.getElementById("selection")
+      var option = language.options[language.selectedIndex]
+      var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
+      $.ajax({
+          type: 'POST',
+          url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (data, status){
+            message = data["body"].replace("instance_type", "<strong>t2.micro</strong>")
+            message2 = message.replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
+            message3 = message2.replace("count", "<strong>2</strong>")
+            document.getElementById('windowboxCode').innerHTML = message3;
+            console.log("it works");
+          }
+      });
+
+    });
+    
+
     
 
     // $("#EC2_TEST").click(function() {
