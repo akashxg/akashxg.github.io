@@ -64,6 +64,27 @@ $(document).ready(function() {
 
     });
     
+  $("#gang_ami").click(function() {
+      //var sendData = $('#EC2_TEST').val();
+      var language = document.getElementById("selection")
+      var option = language.options[language.selectedIndex]
+      var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
+      $.ajax({
+          type: 'POST',
+          url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (data, status){
+            message = data["body"].replace("ami_id", "ami-00068cd7555f543d5")
+            document.getElementById('windowboxCode').innerHTML = message;
+            console.log("it works");
+          }
+      });
+
+    });
+    
     
 
     // $("#EC2_TEST").click(function() {
