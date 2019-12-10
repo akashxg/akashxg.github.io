@@ -91,16 +91,21 @@ html, body {
   border: 1px solid #d3d3d3;
   text-align: left;
   width:100%;
-  overflow: visible;
+  overflow: scroll;
 }
 
 #mydivheader {
   padding: 10px;
   cursor: move;
-  z-index: 10;
+  z-index: 100000;
   background-color: #2196F3;
   color: #fff;
   width:100%;
+  position: relative;
+}
+
+#windowboxCode {
+    overflow-y: visible;
 }
 
 </style>
@@ -4044,9 +4049,7 @@ a);return!1},this))},null,this)},Ca().then(),this)};function Z(a,b){try{window.A
           <button id="gang" type="button">Record</button> 
       </span> 
 
-  <pre>
-<code id="windowboxCode"></code>
-  </pre>     
+  <pre><code id="windowboxCode" rows="10" cols="100"></code></pre>     
   <!--<p id="windowboxCode"><br><br><br><br><br></p>-->
 
 </div>
