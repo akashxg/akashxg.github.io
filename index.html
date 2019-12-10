@@ -85,7 +85,8 @@ html, body {
 /* WINDOWBOX style */
 
 #mydiv {
-  position: absolute;
+  position: fixed;
+  bottom: 0%;
   z-index: 9;
   background-color: #f1f1f1;
   border: 1px solid #d3d3d3;
@@ -4012,12 +4013,8 @@ var ByRei_dynDiv = {
 
 <div id="mydiv">
   <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-  <div id="mydivheader">Click here to move</div>
-  <form>
-	<textarea id="windowboxCode" name="myTextBox" cols="50" rows="5"></textarea>
-	<br/>
-	<input type="submit" value="Send to my Solutions Suite 😩"/>
-</form>
+  <div id="mydivheader">Extract</div>
+  <p id="windowboxCode"></p>
 
 </div>
 
