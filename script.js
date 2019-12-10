@@ -98,7 +98,7 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            message = data["body"].replace("instance_type", "<strong>t2.micro</strong>")
+            message = data["body"].replace("instance_type", "<strong>t2micro</strong>")
             message2 = message.replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
             document.getElementById('windowboxCode').innerHTML = message2;
             console.log("it works");
@@ -120,7 +120,7 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            message = data["body"].replace("instance_type", "<strong>t2.micro</strong>")
+            message = data["body"].replace("instance_type", "<strong>t2micro</strong>")
             message2 = message.replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
             message3 = message2.replace("count", "<strong>2</strong>")
             document.getElementById('windowboxCode').innerHTML = message3;
