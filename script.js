@@ -44,9 +44,11 @@ $(document).ready(function() {
     }
   }
 
-  $("#EC2_TEST").click(function() {
+  $("#gang").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var sendData = {operation: "create", table_name: "Capstone", payload: {language: "python"}};
+      var language = document.getElementById("selection")
+      var option = language.options[language.selectedIndex]
+      var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
           url: 'https://6jodkl74u4.execute-api.us-east-1.amazonaws.com/test_1',
@@ -55,13 +57,14 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            alert("Data: "+ data["body"] + "\nStatus: "+ status);
             document.getElementById('windowboxCode').innerHTML = data["body"];
             console.log("it works");
           }
       });
 
     });
+    
+    
 
     // $("#EC2_TEST").click(function() {
     //   console.log("made it inside EC2");
