@@ -141,7 +141,7 @@ $(document).ready(function() {
       document.getElementById("mydiv").style.top = "40%";
     });
 
-    $("#selection").on('change', function() {
+    $(".gang").on('change', function() {
       //var sendData = $('#EC2_TEST').val();
       var language = document.getElementById("selection")
       var option = language.options[language.selectedIndex]
@@ -226,6 +226,32 @@ $(document).ready(function() {
       });
 
     });
+    
+    
+    // $('#copy').click(function() {
+      
+    //   var aux = document.createElement("input");
+      
+    //   aux.setAttribute("value", document.getElementById('prediv').innerHTML);
+      
+    //   document.body.appendChild(aux);
+      
+    //   // alert(aux.value);
+      
+    //   message = aux.value;
+      
+    //   message2 = message.replace("<br>", "\n")
+      
+    //   alert(message);
+      
+    //   message2.select();
+      
+    //   document.execCommand("copy");
+      
+    //   document.removeChild(aux);
+      
+      
+    // });
 
     // $("#EC2_TEST").click(function() {
     //   console.log("made it inside EC2");
