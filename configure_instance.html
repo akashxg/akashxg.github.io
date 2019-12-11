@@ -92,19 +92,107 @@ html, body {
   border: 1px solid #d3d3d3;
   text-align: left;
   width:100%;
+  max-height:500px;
 }
 
 #mydivheader {
   padding: 10px;
   cursor: move;
-  z-index: 10;
-  background-color: #2196F3;
+  z-index: 100000;
+  background-color: #232f3e;
   color: #fff;
   width:100%;
+  position: relative;
 }
 
 #windowboxCode {
     overflow-y: visible;
+    color:#fff;
+    
+}
+
+#innerWindowBox{
+    background-color: #282828;
+    width: 90%;
+    height: 80%;
+    overflow: scroll !important;
+    margin:auto;
+    margin-top:15px;
+    opacity: 90%;
+}
+
+#prediv {
+    margin: 10px 0px 0px 50px;
+    padding-top:15px;
+    
+}
+
+#windowBoxSpan{
+    margin-top: 20px;
+}
+
+#hovered_ami {
+    color: yellow;
+}
+
+#hovered_type {
+    color: yellow;
+}
+
+#hovered_count {
+    color: yellow;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  height: 100px;
+  opacity: 50%;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip2 .tooltiptext2 {
+  visibility: hidden;
+  width: 400px;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  height: 200px;
+  opacity: 50%;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip2:hover .tooltiptext2 {
+  visibility: visible;
 }
 
 </style>
@@ -4066,24 +4154,26 @@ a);return!1},this))},null,this)},Ca().then(),this)};function Z(a,b){try{window.A
     
 <div id="mydiv">
   <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-      <div id="mydivheader">Extract <hr> <strong>Launch EC2</strong></div> 
-      <span>
-          <select id="selection">
-              <option value="python">Python</option>
-              <option value="c++">C++</option>
-              <option value="go">Go</option>
-              <option value="java">Java</option>
-              <option value="javascript">JavaScript</option>
-              <option value=".net">.NET</option>
-              <option value="cli">AWS CLI</option>
-          </select> 
-          <button id="gang_type" type="button">Record</button> 
-      </span> 
-
-  <pre>
-<code id="windowboxCode" rows="10" cols="100"></code>
-  </pre>     
-  <!--<p id="windowboxCode"><br><br><br><br><br></p>-->
+      <div id="mydivheader">Extract</div> 
+      <div id="iconBar">
+          <span>
+              <select id="selection">
+                  <option value="python">Python</option>
+                  <option value="c++">C++</option>
+                  <option value="go">Go</option>
+                  <option value="java">Java</option>
+                  <option value="javascript">JavaScript</option>
+                  <option value=".net">.NET</option>
+                  <option value="cli">AWS CLI</option>
+              </select> 
+              <button id="gang_type" type="button">Record</button> 
+          </span>
+      </div>
+      <div id="innerWindowBox">
+        <span id="windowBoxSpan" role="presentation">
+            <pre id="prediv"><code id="windowboxCode" rows="10" cols="100"></code></pre> 
+        </span>
+      </div>
 
 </div>
 

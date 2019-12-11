@@ -43,6 +43,7 @@ $(document).ready(function() {
       document.onmousemove = null;
     }
   }
+  
 
   $("#gang").click(function() {
       //var sendData = $('#EC2_TEST').val();
@@ -77,7 +78,7 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            message = data["body"].replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
+            message = data["body"].replace("ami_id", "<span class='tooltip' id='hovered_ami'>ami-00068cd7555f543d5<span class='tooltiptext'>The ID of the AMI. An AMI ID is required <br>to launch an instance and must <br>be specified here or in a launch <br>template.</span></span>")
             document.getElementById('windowboxCode').innerHTML = message;
             console.log("it works");
           }
@@ -98,8 +99,8 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            message = data["body"].replace("instance_type", "<strong>t2micro</strong>")
-            message2 = message.replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
+            message = data["body"].replace("instance_type", "<span class='tooltip' id='hovered_type'>t2micro <span class='tooltiptext'> The instance type. For more information, <br>see <a href='https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html'>Instance Types </a>in the Amazon Elastic <br>Compute Cloud User Guide.</span></span>")
+            message2 = message.replace("ami_id", "<span class='tooltip' id='hovered_ami'>ami-00068cd7555f543d5<span class='tooltiptext'>The ID of the AMI. An AMI ID is required <br>to launch an instance and must <br>be specified here or in a launch <br>template.</span></span>")
             document.getElementById('windowboxCode').innerHTML = message2;
             console.log("it works");
           }
@@ -120,9 +121,9 @@ $(document).ready(function() {
           contentType: "application/json",
           dataType: "json",
           success: function (data, status){
-            message = data["body"].replace("instance_type", "<strong>t2micro</strong>")
-            message2 = message.replace("ami_id", "<strong>ami-00068cd7555f543d5</strong>")
-            message3 = message2.replace("count", "<strong>2</strong>")
+            message = data["body"].replace("instance_type", "<span class='tooltip' id='hovered_type'>t2micro <span class='tooltiptext'>The instance type. For more information, <br>see <a href='https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html'>Instance Types </a>in the Amazon Elastic <br>Compute Cloud User Guide.</span></span>")
+            message2 = message.replace("ami_id", "<span class='tooltip' id='hovered_ami'>ami-00068cd7555f543d5 <span class='tooltiptext'>The ID of the AMI. An AMI ID is required <br>to launch an instance and must <br>be specified here or in a launch <br>template.</span></span>")
+            message3 = message2.replace("count", "<span class='tooltip2' id='hovered_count'>2<span class='tooltiptext2'>Number of instances to launch. <br>If a single number is provided, it is <br>assumed to be the minimum to launch <br>(defaults to 1). If a range is provided in <br>the form min:max then the first number <br>is interpreted as the minimum number of <br>instances to launch and the second is <br>interpreted as the maximum number<br> of instances to launch.</span></span>")
             document.getElementById('windowboxCode').innerHTML = message3;
             console.log("it works");
           }
