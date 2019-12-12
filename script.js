@@ -60,7 +60,7 @@ $(document).ready(function() {
           dataType: "json",
           success: function (data, status){
             console.log("it works");
-            alert('it works!');
+            alert('Template Saved Successfully!');
           }
       });
     });
