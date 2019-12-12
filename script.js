@@ -44,6 +44,26 @@ $(document).ready(function() {
     }
   }
   
+  $("#theSaveButton").click(function() {
+      var actionElement = document.getElementById("actionElement").innerHTML;
+      var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
+      var language = document.getElementById("selection")
+      var option = language.options[language.selectedIndex]
+      var theCode = document.getElementById('windowboxCode').innerHTML;
+      var sendData = {payload: {key: randomNumber, language: String(option.value), code: String(theCode), action: String(actionElement)}};
+      $.ajax({
+          type: 'POST',
+          url: 'https://7qjz3f31s3.execute-api.us-east-1.amazonaws.com/test1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function (data, status){
+            console.log("it works");
+            alert('it works!');
+          }
+      });
+    });
 
   $("#gang").click(function() {
       //var sendData = $('#EC2_TEST').val();
@@ -226,7 +246,6 @@ $(document).ready(function() {
       });
 
     });
-    
     
     // $('#copy').click(function() {
       
