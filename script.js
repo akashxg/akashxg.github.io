@@ -152,12 +152,12 @@ $(document).ready(function() {
     });
     
     $("#gang_minimize").click(function() {
-      document.getElementById("mydiv").style.bottom = "3%";
+      document.getElementById("mydiv").style.bottom = "0%";
       document.getElementById("mydiv").style.top = "95%";
     });
     
     $("#gang_maximize").click(function() {
-      document.getElementById("mydiv").style.bottom = "3%";
+      document.getElementById("mydiv").style.bottom = "0%";
       document.getElementById("mydiv").style.top = "40%";
     });
 
@@ -246,6 +246,21 @@ $(document).ready(function() {
       });
 
     });
+    
+    $('#recordButton').click(function(){
+      
+      if(document.getElementById("mydiv").style.display == "none"){
+        document.getElementById("recordButton").style.color = "#ff9900";
+        document.getElementById("mydiv").style.display = "inherit";
+      }
+      else{
+        document.getElementById("mydiv").style.display = "none";
+        document.getElementById("recordButton").style.color = "#fff"       
+      }
+
+    });
+    
+    
     
     // $('#copy').click(function() {
       
