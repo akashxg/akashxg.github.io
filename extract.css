@@ -1,0 +1,58 @@
+/* RECORDBUTTON STYLE*/
+
+#recordButton{
+    margin-left:35px;
+    color:#fff;
+}
+
+/* WINDOWBOXCSS */
+
+#mydiv {
+  position: fixed;
+  bottom: 0%;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: left;
+  width:100%;
+  max-height:500px;
+  top: 95%;
+  display: none;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 100000;
+  background-color: #232f3e;
+  color: #fff;
+  width:100%;
+  position: relative;
+}
+
+#windowboxCode {
+    overflow-y: visible;
+    color:#fff;
+    
+}
+
+
+#innerWindowBox{
+    background-color: #282828;
+    width: 90%;
+    height: 80%;
+    overflow: scroll !important;
+    margin:auto;
+    margin-top:15px;
+    opacity: 90%;
+}
+
+#prediv {
+    margin: 10px 0px 0px 50px;
+    padding-top:15px;
+    
+}
+
+#windowBoxSpan{
+    margin-top: 20px;
+}
