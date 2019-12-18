@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+
+  //WindowBox Variables
+  var recordButtonIsOn;
+
   // Make the DIV element draggable:
   dragElement(document.getElementById("mydiv"));
 
@@ -47,8 +51,8 @@ $(document).ready(function() {
   $("#theSaveButton").click(function() {
       var actionElement = document.getElementById("actionElement").innerHTML;
       var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var theCode = document.getElementById('windowboxCode').innerHTML;
       var sendData = {payload: {key: randomNumber, language: String(option.value), code: String(theCode), action: String(actionElement)}};
       $.ajax({
@@ -67,8 +71,8 @@ $(document).ready(function() {
 
   $("#gang").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -87,8 +91,8 @@ $(document).ready(function() {
     
   $("#gang_ami").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -108,8 +112,8 @@ $(document).ready(function() {
     
     $("#gang_type").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -130,8 +134,8 @@ $(document).ready(function() {
     
     $("#gang_count").click(function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -163,8 +167,8 @@ $(document).ready(function() {
 
     $(".gang").on('change', function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -183,8 +187,8 @@ $(document).ready(function() {
     
     $(".ami").on('change', function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -204,8 +208,8 @@ $(document).ready(function() {
     
     $(".type").on('change', function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -226,8 +230,8 @@ $(document).ready(function() {
     
     $(".count").on('change', function() {
       //var sendData = $('#EC2_TEST').val();
-      var language = document.getElementById("selection")
-      var option = language.options[language.selectedIndex]
+      var language = document.getElementById("selection");
+      var option = language.options[language.selectedIndex];
       var sendData = {operation: "create", table_name: "Capstone", payload: {language: option.value}};
       $.ajax({
           type: 'POST',
@@ -247,42 +251,107 @@ $(document).ready(function() {
 
     });
     
+    //https://ju2x3s4rbh.execute-api.us-east-1.amazonaws.com/test_1 "retrieve state"
+    
+    //Extract Record Button Logic
     $('#recordButton').click(function(){
       
+
       if(document.getElementById("mydiv").style.display == "none"){
-        document.getElementById("recordButton").style.color = "#ff9900";
-        document.getElementById("mydiv").style.display = "inherit";
+        recordButtonIsOn = true;
+        changeRecordButtonColor(recordButtonIsOn);
+        changeWindowBoxVisibility(recordButtonIsOn);
+        
+        var language = document.getElementById("selection");
+        var option = language.options[language.selectedIndex];
+        var theCode = document.getElementById('windowboxCode').innerHTML;
+        
+        var sendData = { payload: { languageSelected: String(option.value), currentPayload: String(theCode), isExtractOn: true, isWindowUp: true } };
+        
+        $.ajax({
+          type:'POST',
+          url: 'https://gu54qttrk2.execute-api.us-east-1.amazonaws.com/test_1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function(data, status){
+            console.log("sent data in if");
+          }
+        });
+      
       }
       else{
-        document.getElementById("mydiv").style.display = "none";
-        document.getElementById("recordButton").style.color = "#fff"       
+        recordButtonIsOn = false;  
+        changeRecordButtonColor(recordButtonIsOn);
+        changeWindowBoxVisibility(recordButtonIsOn);
+        
+        var language = document.getElementById("selection");
+        var option = language.options[language.selectedIndex];
+        var theCode = document.getElementById('windowboxCode').innerHTML;
+        
+        var sendData = { payload: { languageSelected: String(option.value), currentPayload: String(theCode), isExtractOn: false, isWindowUp: false } };
+
+        
+        $.ajax({
+          type:'POST',
+          url: 'https://gu54qttrk2.execute-api.us-east-1.amazonaws.com/test_1',
+          data: JSON.stringify(sendData),
+          crossDomain: true,
+          contentType: "application/json",
+          dataType: "json",
+          success: function(data, status){
+            console.log("sent data in else");
+          }
+        });
       }
 
     });
     
+    //Helper Function to Change Extract Button Color Permamntely
+    function setRecordButton(elem){
+      if(elem=="true"){
+        document.getElementById("recordButton").style.color = "#ff9900";
+      }
+      else{
+        document.getElementById("recordButton").style.color = "#fff"
+      }
+    }
+    
+    //Helper Function to Change Extract Button color
+    function changeRecordButtonColor(elem){
+      if(elem){
+        document.getElementById("recordButton").style.color = "#ff9900";
+      }
+      else{
+        document.getElementById("recordButton").style.color = "#fff";
+      }
+    }
+    
+    //Helper Function to Change "mydiv" display
+    function changeWindowBoxVisibility(elem){
+      if(elem){
+        document.getElementById("mydiv").style.display = "inherit";
+      }
+      else{
+        document.getElementById("mydiv").style.display = "none";
+      }
+    }
     
     
-    // $('#copy').click(function() {
+    // $('#recordButton').click(function(){
       
-    //   var aux = document.createElement("input");
       
-    //   aux.setAttribute("value", document.getElementById('prediv').innerHTML);
-      
-    //   document.body.appendChild(aux);
-      
-    //   // alert(aux.value);
-      
-    //   message = aux.value;
-      
-    //   message2 = message.replace("<br>", "\n")
-      
-    //   alert(message);
-      
-    //   message2.select();
-      
-    //   document.execCommand("copy");
-      
-    //   document.removeChild(aux);
+    //   if(document.getElementById("mydiv").style.display == "none"){
+    //     document.getElementById("recordButton").style.color = "#ff9900";
+    //     document.getElementById("mydiv").style.display = "inherit";
+    //   }
+    //   else{
+    //     document.getElementById("mydiv").style.display = "none";
+    //     document.getElementById("recordButton").style.color = "#fff"       
+    //   }
+
+    // });
       
       
     // });
